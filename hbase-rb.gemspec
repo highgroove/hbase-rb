@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "hbase-rb"
-  s.version     = "0.0.0"
+  s.version     = "0.90.4.pre1"
   s.authors     = ["Andy Lindeman"]
   s.email       = ["andy@highgroove.com"]
   s.homepage    = "http://github.com/highgroove/hbase-rb"

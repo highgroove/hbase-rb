@@ -33,3 +33,33 @@ Require it explicitly in your scripts:
 require "rubygems"
 require "hbase-rb"
 ```
+
+## Versioning
+
+The version of the gem matches the version of HBase the interface was
+generated against.
+
+For instance, when using HBase 0.90.4:
+
+```ruby
+gem 'hbase-rb', '0.90.4'
+```
+
+## Usage
+
+This library simply exposes the generated Ruby code from Thrift.
+**Therefore it is not necessarily very idiomatic Ruby.**
+
+For example:
+
+```ruby
+socket    = Thrift::Socket.new('localhost', 9090)
+
+transport = Thrift::BufferedTransport(socket)
+transport.open
+
+protocol  = Thrift::BinaryProtocol.new(transport)
+client    = HBase::Client.new(protocol)
+
+puts client.getTableNames
+```
