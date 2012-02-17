@@ -55,7 +55,7 @@ For example:
 ```ruby
 socket    = Thrift::Socket.new('localhost', 9090)
 
-transport = Thrift::BufferedTransport(socket)
+transport = Thrift::BufferedTransport.new(socket)
 transport.open
 
 protocol  = Thrift::BinaryProtocol.new(transport)
