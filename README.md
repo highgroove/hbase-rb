@@ -64,6 +64,25 @@ client    = HBase::Client.new(protocol)
 puts client.getTableNames
 ```
 
+## Writing Rows
+
+```ruby
+# Assuming a table "mytable" and a column family "c"
+client.mutateRow("mytable", "abc123", [HBase::Mutation.new(column: "c:foo", value: "bar")])
+```
+
+## Reading Rows
+
+```ruby
+# Assuming a table "mytable" and a column family "c"
+results = client.getRow("mytable", "abc123")
+if result = results.first
+  result.columns.each do |key, cell|
+    puts "#{key}: #{cell.value}"
+  end
+end
+```
+
 ## API Reference
 
 * [Hbase/ThriftApi](http://wiki.apache.org/hadoop/Hbase/ThriftApi)
