@@ -63,3 +63,7 @@ client    = HBase::Client.new(protocol)
 
 puts client.getTableNames
 ```
+
+## API Reference
+
+* [Hbase/ThriftApi](http://wiki.apache.org/hadoop/Hbase/ThriftApi)
