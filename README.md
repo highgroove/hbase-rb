@@ -6,7 +6,7 @@ To use [HBase](http://hbase.apache.org/) with [Apache
 Thrift](http://thrift.apache.org/), you might have to manually generate
 Ruby code from generic *.thrift files.
 
-This gem tries to alleviate that slight annoyance and package everything
+This gem tries to alleviate that slight annoyance by packaging everything
 you need to communicate with HBase.
 
 ## Installation
